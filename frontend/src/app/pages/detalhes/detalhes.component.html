@@ -1,0 +1,72 @@
+
+<mat-card>
+
+  <div >
+      <h1 class="text-dark">Detalhes Usuário</h1>
+  </div>
+
+<div *ngIf="usuario">
+
+<form  >
+
+
+<div class="input-box">
+  <mat-form-field>
+    <mat-label>Nome:</mat-label>
+   <input matInput type="text" class="form-control text-dark" value="{{usuario.nome}}" disabled>
+    </mat-form-field>
+</div>
+
+<div  class="input-box">
+  <mat-form-field>
+    <mat-label>Sobrenome:</mat-label>
+    <input matInput type="text" class="form-control  text-dark" value="{{usuario.sobrenome}}" disabled>
+    </mat-form-field>
+</div>
+
+<div  class="input-box">
+  <mat-form-field>
+    <mat-label>E-mail:</mat-label>
+    <input matInput type="text" class="form-control  text-dark" id="Livro" value="{{usuario.email}}" disabled>
+    </mat-form-field>
+</div>
+
+<div  class="input-box">
+  <mat-form-field>
+    <mat-label>Escolaridade:</mat-label>
+    <input matInput type="text" class="form-control  text-dark" asp-for="LivroEmprestado" id="Livro" value="{{usuario.idEscolaridade}}" disabled>
+    </mat-form-field>
+</div>
+
+<div  class="input-box">
+  <mat-form-field>
+    <mat-label>Situação:</mat-label>
+    <input matInput type="text" class="form-control  text-dark" asp-for="LivroEmprestado" id="Livro" value="{{usuario.ativo == true ? 'Ativo' : 'Inativo'}}" disabled>
+    </mat-form-field>
+</div>
+
+
+<div  class="input-box">
+  <mat-form-field>
+    <mat-label>Data de Nascimento:</mat-label>
+    <input matInput type="text" class="form-control  text-dark" asp-for="LivroEmprestado" id="Livro" value="{{usuario.dataNascimento}}" disabled>
+    </mat-form-field>
+</div>
+
+
+<div class="btn-box">
+    <div *ngIf="usuario.ativo == true">
+      <a  (click)="ChangeActiveUsuario()"  mat-raised-button color="warn">Inativar Usuário</a>
+    </div>
+    <div *ngIf="usuario.ativo == false">
+      <a  (click)="ChangeActiveUsuario()"  mat-raised-button color="primary">Ativar Usuário</a>
+    </div>
+    <a  routerLink=""  mat-raised-button>Voltar</a>
+</div>
+
+
+</form>
+</div>
+
+
+</mat-card>
